@@ -1,5 +1,7 @@
 # Noa Ignite Exsercise
 
+This is a little exersise from the company: Noa Ignite for a possible internship
+
 ## Available Scripts
 
 In the project directory, you can run:
