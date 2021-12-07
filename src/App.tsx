@@ -6,13 +6,19 @@ import { StyledCounter } from './components/styles/Counter';
 import { useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const sessionStorageKey = 'displayedValue';
+  const getSessionStorage = parseInt(sessionStorage.getItem(sessionStorageKey)!);
+  const [count, setCount] = useState(getSessionStorage || 0);
+
+  const setSessionStorage = sessionStorage.setItem(sessionStorageKey, JSON.stringify(count));
 
   function onDecrementValue() {
     setCount(count - 1);
+    return setSessionStorage;
   }
   function onIncrementValue() {
     setCount(count + 1);
+    return setSessionStorage;
   }
 
   return (
