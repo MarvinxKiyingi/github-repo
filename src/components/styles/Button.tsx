@@ -13,10 +13,17 @@ export const StyledDecrementButton = styled.button<Button>`
   border: black solid 0.15rem;
   border-radius: 2rem;
   padding: 0.2rem 0.5rem;
+  cursor: pointer;
 
   &:hover {
     background-color: ${({ bgColor }) => bgColor || 'black'};
     color: ${({ textColor }) => textColor || 'white'};
+  }
+  &:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: default;
   }
 
   @media (min-width: 768px) {
@@ -35,6 +42,7 @@ export const StyledIncrementButton = styled.button<Button>`
   border: black solid 0.15rem;
   border-radius: 2rem;
   padding: 0.2rem 0.5rem;
+  cursor: pointer;
 
   &:hover {
     background-color: ${({ onHoverBgColor }) => onHoverBgColor || 'rebeccapurple'};
