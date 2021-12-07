@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { StyledDecrementButton, StyledIncrementButton } from './components/styles/Button';
+import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
+import AddRoundedIcon from '@mui/icons-material/AddRounded';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className='counterWrapper'>
+        <StyledDecrementButton>
+          <RemoveRoundedIcon fontSize='large' />
+          DECREMENT
+        </StyledDecrementButton>
+
+        <StyledIncrementButton>
+          <AddRoundedIcon fontSize='large' />
+          INCREMENT
+        </StyledIncrementButton>
+      </div>
     </div>
   );
 }
