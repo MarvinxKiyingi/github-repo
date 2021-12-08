@@ -20,7 +20,7 @@ export const StyledDecrementButton = styled.button<Button>`
     color: ${({ textColor }) => textColor || 'white'};
   }
   &:disabled {
-    border: 1px solid #999999;
+    border: 0.15rem solid #999999;
     background-color: #cccccc;
     color: #666666;
     cursor: default;

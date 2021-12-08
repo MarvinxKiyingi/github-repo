@@ -1,9 +1,8 @@
 import './App.css';
-import { StyledDecrementButton, StyledIncrementButton } from './components/styles/Button';
-import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import { StyledCounter } from './components/styles/Counter';
 import { useState } from 'react';
+import { Decrement } from './components/Decrement/Decrement';
+import { DisplayCount } from './components/Counter/Counter';
+import { Increment } from './components/Increment/Increment';
 
 function App() {
   const sessionStorageKey = 'displayedValue';
@@ -14,6 +13,7 @@ function App() {
 
   function onDecrementValue() {
     setCount(count - 1);
+    console.log('hej');
     return setSessionStorage;
   }
   function onIncrementValue() {
@@ -24,17 +24,9 @@ function App() {
   return (
     <div className='App'>
       <div className='counterWrapper'>
-        <StyledDecrementButton disabled={count === 0} onClick={onDecrementValue}>
-          <RemoveRoundedIcon fontSize='large' />
-          DECREMENT
-        </StyledDecrementButton>
-
-        <StyledCounter>Counter: {count}</StyledCounter>
-
-        <StyledIncrementButton onClick={onIncrementValue}>
-          <AddRoundedIcon fontSize='large' />
-          INCREMENT
-        </StyledIncrementButton>
+        <Decrement onDisable={count} onClick={onDecrementValue} />
+        <DisplayCount number={count}></DisplayCount>
+        <Increment onClick={onIncrementValue} />
       </div>
     </div>
   );
