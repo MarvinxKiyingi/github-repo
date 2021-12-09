@@ -48,6 +48,12 @@ export const StyledIncrementButton = styled.button<Button>`
     background-color: ${({ onHoverBgColor }) => onHoverBgColor || 'rebeccapurple'};
     color: ${({ onHoverTextColor }) => onHoverTextColor || 'white'};
   }
+  &:disabled {
+    border: 0.15rem solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: default;
+  }
 
   @media (min-width: 768px) {
     width: 14rem;
