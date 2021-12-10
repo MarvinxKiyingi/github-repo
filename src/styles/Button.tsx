@@ -39,7 +39,7 @@ export const StyledIncrementButton = styled.button<Button>`
   align-items: center;
   background-color: ${({ bgColor }) => bgColor || 'hotpink'};
   color: ${({ textColor }) => textColor || 'white'};
-  border: black solid 0.15rem;
+  border: none;
   border-radius: 2rem;
   padding: 0.2rem 0.5rem;
   cursor: pointer;

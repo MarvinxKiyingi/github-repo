@@ -5,6 +5,9 @@ import { DisplayCount } from './components/Counter/Counter';
 import { Increment } from './components/Increment/Increment';
 import axios from 'axios';
 import { getSessionStorage, gitHubRepos, IUserData, sessionStorageKey, userDataInitialValue } from './utils/Variables';
+import { GitHubLogo } from './components/GitHubLogo/gitHubLogo';
+import { ErrorMessage } from './components/Error/Error';
+import { PrintData } from './components/PrintData/PrintData';
 
 function App() {
   const [count, setCount] = useState(getSessionStorage || 0);
@@ -44,25 +47,25 @@ function App() {
 
   useEffect(() => {
     getUserData();
+    // eslint-disable-next-line
   }, [count]);
 
   return (
     <div className='App'>
-      <div className='counterWrapper'>
-        <Decrement onDisable={count} onClick={onDecrementValue} />
-        <DisplayCount number={count}></DisplayCount>
-        <Increment onDisable={count} onClick={onIncrementValue} />
-      </div>
-
-      {showData ? (
-        <div>
-          <p>Full name: {userData.full_name}</p>
-          <p>Description: {userData.description}</p>
-          <p>Amount of stars: {userData.stargazers_count}</p>
+      <div className='contentWrapper'>
+        <GitHubLogo />
+        <div className='counterWrapper'>
+          <Decrement onDisable={count} onClick={onDecrementValue} />
+          <DisplayCount number={count}></DisplayCount>
+          <Increment onDisable={count} onClick={onIncrementValue} />
         </div>
-      ) : (
-        error.errorMessage
-      )}
+
+        {showData ? (
+          <PrintData name={userData.full_name} description={userData.description} stars={userData.stargazers_count} />
+        ) : (
+          <ErrorMessage errorMessage={error.errorMessage} />
+        )}
+      </div>
     </div>
   );
 }
