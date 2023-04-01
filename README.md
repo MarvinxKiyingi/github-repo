@@ -12,7 +12,7 @@ This is a little exersise sent to me by a company for a possible internship
 
 - I choose `Material UI` & `Styled components`
 
-Live link: https://noaignite-exercise.netlify.app/
+Live link: https://github-repo-job-application.netlify.app/
 
 ## Available Scripts
 
