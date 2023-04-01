@@ -1,6 +1,6 @@
-# Noa Ignite Exsercise
+# Github repo Exsercise
 
-This is a little exersise from the company: Noa Ignite for a possible internship
+This is a little exersise sent to e by a company for a possible internship
 
 1. Create a Button component after a certain design given by the company
 2. Use that component to crate a counter that interacts with the buttons "decrement" & "increment"
